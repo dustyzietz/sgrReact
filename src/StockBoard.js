@@ -13,8 +13,7 @@ export default function StockBoard(props) {
   return (
     <div>
       <Typography variant="body2" color="textSecondary" component="p">
-        {dimensions.height} {dimensions.width} {dimensions.thickness}
-        {dimensions.volume}L
+       {`${dimensions.height} x ${dimensions.width} x ${dimensions.thickness}  ${dimensions.volume}L`} 
         <IconButton 
         onClick={handleClick}
         size="small" color="secondary" aria-label="add">

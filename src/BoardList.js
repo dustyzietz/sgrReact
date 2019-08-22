@@ -11,7 +11,7 @@ export default function BoardList(props) {
     <div>
       <Grid container spacing={3}>
         {models.map(mod => (
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item sm={12} lg={6} xl={4}>
          <BoardCard 
          minVolume={minVolume}
          maxVolume={maxVolume}
