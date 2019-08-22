@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
-import { shapers, models } from "./store";
 import Header from "./Header";
 import BoardList from "./BoardList";
 import Quiver from './Quiver';
 import uuid from 'uuid';
-import CustomDialog from "./CustomDialog";
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import TextField from '@material-ui/core/TextField';
+import DialogActions from '@material-ui/core/DialogActions';
+import Button from '@material-ui/core/Button';
 
 export class App extends Component {
   state = {
@@ -14,7 +19,7 @@ export class App extends Component {
     quiver: [],
     quiverOn: false,
     dialogOn: false,
-    customBoard: []
+    customBoard: {}
   };
 
   addModelToQuiver  = (model, image, dimensions) => {
@@ -52,14 +57,13 @@ export class App extends Component {
 
   updateDialog = (board) => {
     this.setState({
-      customBoard:
-      this.state.quiver.filter(b => board.id == b.id )
+      customBoard: { model:board.model, id:board.id, image:board.image, height:board.dimensions.height, width:board.dimensions.width, thickness:board.dimensions.thickness, volume:board.dimensions.volume }
     });
     this.toggleDialog();
   }
 
   render() {
-    const { minVolume, maxVolume, quiver, quiverOn, dialogOn, customBoard } = this.state;
+    const { minVolume, maxVolume, quiver, quiverOn, dialogOn, customBoard: { model, height, width, thickness} } = this.state;
 
     return (
       <div>
@@ -73,7 +77,49 @@ export class App extends Component {
         : <BoardList addModelToQuiver={this.addModelToQuiver} minVolume={minVolume} maxVolume={maxVolume}  
         />
       } 
-        <CustomDialog customBoard={customBoard} dialogOn={dialogOn} updateDialog={this.updateDialog}/>
+         <Dialog open={dialogOn} onClose={this.toggleDialog} aria-labelledby="form-dialog-title">
+        <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {model}
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="height"
+            label='height'
+            type="text"
+            value={height}
+            fullWidth
+          />
+           <TextField
+            autoFocus
+            margin="dense"
+            id="width"
+            label="width"
+            type="text"
+            value={width}
+            fullWidth
+          />
+           <TextField
+            autoFocus
+            margin="dense"
+            id="thickness"
+            label="thickness"
+            type="text"
+            value={thickness}
+            fullWidth
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={this.toggleDialog} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={this.toggleDialog} color="primary">
+            Subscribe
+          </Button>
+        </DialogActions>
+      </Dialog>
         
         
         
