@@ -15,12 +15,15 @@ class Header extends Component {
 
   render() {
    const { value } = this.state;
-   const { handleFilter } = this.props ;
+   const { handleFilter, toggleQuiver, quiverOn } = this.props ;
 
     const style = {
       range: {
-        width: "30%",
+        width:'30%',
         marginTop: 20
+      },
+      quiver: {
+      marginLeft: '5%'
       },
       rangeButton: {
         margin: 5
@@ -69,6 +72,14 @@ class Header extends Component {
               onClick={handleSubmit}
             >
               Filter
+            </Button>
+            <Button
+              style={style.quiver}
+              variant="contained"
+              color={quiverOn?'secondary':'default'}
+              onClick={toggleQuiver}
+            >
+              {quiverOn?'Search':'Quiver'}
             </Button>
           </Toolbar>
         </AppBar>
