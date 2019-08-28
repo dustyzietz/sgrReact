@@ -1,7 +1,7 @@
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Slider from "@material-ui/core/Slider";
 import Button from "@material-ui/core/Button";
 
@@ -50,7 +50,9 @@ class Header extends Component {
           style={{ marginBottom: "20px" }}
         >
           <Toolbar>
-            <Slider
+          { !quiverOn &&
+          <Fragment>
+             <Slider
               value={value}
               style={style.range}
               defaultValue={30}
@@ -73,10 +75,11 @@ class Header extends Component {
             >
               Filter
             </Button>
+            </Fragment>}
             <Button
               style={style.quiver}
               variant="contained"
-              color={quiverOn?'secondary':'default'}
+              color={quiverOn?'primary':'default'}
               onClick={toggleQuiver}
             >
               {quiverOn?'Search':'Quiver'}

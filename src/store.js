@@ -1,3 +1,5 @@
+import uuid from 'uuid';
+
 export const shapers = [
     'JS', 'Merrick', 'chili'
 ]
@@ -8,41 +10,77 @@ export const models = [
         image: `https://content.cavewire.com/host/jsindustries-us/path/media/catalog/product/cache/1/thumbnail/800x/e4d92e6aceaad517e7b5c12e0dc06587/f/o/forget-me-not-2-full-round-js-industries-surfboards_6.jpg`,
         dimensions: [
             {
-                height: `6' 0"`,
-                width: `18 3/4"`,
-                thickness: `2 3/8"`,
-                volume: 27.6
+                height1: 6,
+                height2: 0,
+                width1: 18,
+                width2: 3,
+                width3: 4,
+                thickness1: 2,
+                thickness2: 3,
+                thickness3: 8,
+                volume: 27.6,
+                key: uuid()
             },
             {
-                height: `6' 1"`,
-                width: `18 7/8"`,
-                thickness: `2 7/16"`,
-                volume: 29
+                height1: 6,
+                height2: 1,
+                width1: 18,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 7,
+                thickness3: 16,
+                volume: 29,
+                key: uuid()
             },
             {
-                height: `6' 2"`,
-                width: `19 1/8"`,
-                thickness: `2 1/2"`,
-                volume: 30.6
+                height1: 6,
+                height2: 2,
+                width1: 19,
+                width2: 0,
+                width3: 0,
+                thickness1: 2,
+                thickness2: 1,
+                thickness3: 2,
+                volume: 30.6,
+                key: uuid()
             },
             {
-                height: `6' 3"`,
-                width: `19 1/8"`,
-                thickness: `2 1/2"`,
-                volume: 31
+                height1: 6,
+                height2: 3,
+                width1: 19,
+                width2: 1,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 1,
+                thickness3: 2,
+                volume: 31,
+                key: uuid()
             },
             {
-                height: `6' 4"`,
-                width: `19 1/4"`,
-                thickness: `2 9/16"`,
-                volume: 32.6
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 1,
+                width3: 4,
+                thickness1: 2,
+                thickness2: 9,
+                thickness3: 16,
+                volume: 32.6,
+                key: uuid()
             },
             {
-                height: `6' 5"`,
-                width: `19 1/2"`,
-                thickness: `2 5/8"`,
-                volume: 34
-            },
+                height1: 6,
+                height2: 5,
+                width1: 19,
+                width2: 1,
+                width3: 2,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 34,
+                key: uuid()
+            }
         ]
     },
     {
@@ -50,46 +88,88 @@ export const models = [
         image: `https://content.cavewire.com/host/boardcave-us/path/media/catalog/product/cache/1/thumbnail/800x/e4d92e6aceaad517e7b5c12e0dc06587/a/2/a2-chilli-surfboards.jpg`,
         dimensions: [
             {
-                height: `5' 11"`,
-                width: `18 7/8"`,
-                thickness: `2 5/16"`,
-                volume: 26.70
+                height1: 5,
+                height2: 11,
+                width1: 18,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 16,
+                volume: 26.7,
+                key: uuid()
             },
             {
-                height: `5'11"`,
-                width: `19`,
-                thickness: `2 3/8"`,
-                volume: 27.50
+                height1: 5,
+                height2: 11,
+                width1: 19,
+                width2: 0,
+                width3: 0,
+                thickness1: 2,
+                thickness2: 3,
+                thickness3: 8,
+                volume: 27.5,
+                key: uuid()
             },
             {
-                height: `6'0"`,
-                width: `19"`,
-                thickness: `2 7/16`,
-                volume: 28.50
+                height1: 6,
+                height2: 0,
+                width1: 19,
+                width2: 0,
+                width3: 0,
+                thickness1: 2,
+                thickness2: 7,
+                thickness3: 16,               
+                volume: 28.5,
+                key: uuid()
             },
             {
-                height: `6'0"`,
-                width: `19 1/8"`,
-                thickness: `2 1/2"`,
-                volume: 29.50
+                height1: 6,
+                height2: 0,
+                width1: 19,
+                width2: 1,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 1,
+                thickness3: 2,   
+                volume: 29.5,
+                key: uuid()
             },
             {
-                height: `6'1"`,
-                width: `19 1/4"`,
-                thickness: `2 1/2"`,
-                volume: 30.2
+                height1: 6,
+                height2: 1,
+                width1: 19,
+                width2: 1,
+                width3: 4,
+                thickness1: 2,
+                thickness2: 1,
+                thickness3: 2,   
+                volume: 30.2,
+                key: uuid()
             },
             {
-                height: `6'2"`,
-                width: `19 3/8"`,
-                thickness: `2 9/16"`,
-                volume: 31.7
+                height1: 6,
+                height2: 2,
+                width1: 19,
+                width2: 3,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 9,
+                thickness3: 16,   
+                volume: 31.7,
+                key: uuid()
             },
             {
-                height: `6'3"`,
-                width: `19 1/2"`,
-                thickness: `2 5/8"`,
-                volume: 33.7
+                height1: 6,
+                height2: 3,
+                width1: 19,
+                width2: 1,
+                width3: 2,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,   
+                volume: 33.7,
+                key: uuid()
             },
         ]
     },
@@ -98,46 +178,88 @@ export const models = [
         image: `https://cdn11.bigcommerce.com/s-9rwti9g0ov/images/stencil/1280x1280/products/593/1954/Chilli-Surfboard-Oh-One__67958.1502252459.jpg?c=2&imbypass=on&imbypass=on`,
         dimensions: [
             {
-                height: `5'10"`,
-                width: `19"`,
-                thickness: `2 5/16"`,
-                volume: 26.40
+                height1: 5,
+                height2: 10,
+                width1: 19,
+                width2: 0,
+                width3: 0,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 16,   
+                volume: 26.4,
+                key: uuid()
             },
             {
-                height: `5'11"`,
-                width: `19 1/8"`,
-                thickness: `2 3/8"`,
-                volume: 27.60
+                height1: 5,
+                height2: 11,
+                width1: 19,
+                width2: 1,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 3,
+                thickness3: 8,   
+                volume: 27.6,
+                key: uuid()
             },
             {
-                height: `6'0"`,
-                width: `19 1/4"`,
-                thickness: `2 7/16"`,
-                volume: 28.80
+                height1: 6,
+                height2: 0,
+                width1: 19,
+                width2: 1,
+                width3: 4,
+                thickness1: 2,
+                thickness2: 7,
+                thickness3: 16,   
+                volume: 28.8,
+                key: uuid()
             },
             {
-                height: `6'1"`,
-                width: `19 3/8"`,
-                thickness: `2 1/2"`,
-                volume: 30.00
+                height1: 6,
+                height2: 1,
+                width1: 19,
+                width2: 3,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 1,
+                thickness3: 2,
+                volume: 30,
+                key: uuid()
             },
             {
-                height: `6'2"`,
-                width: `19 5/8"`,
-                thickness: `2 9/16"`,
-                volume: 31.50
+                height1: 6,
+                height2: 2,
+                width1: 19,
+                width2: 5,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 9,
+                thickness3: 16,
+                volume: 31.5,
+                key: uuid()
             },
             {
-                height: `6'3"`,
-                width: `19 3/4"`,
-                thickness: `2 5/8"`,
-                volume: 32.70	
+                height1: 6,
+                height2: 3,
+                width1: 19,
+                width2: 3,
+                width3: 4,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 32.7,
+                key: uuid()
             },
             {
-                height: `6'4"`,
-                width: `19 7/8"`,
-                thickness: `2 5/8"`,
-                volume: 33.50
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
         ]
     },
@@ -146,40 +268,76 @@ export const models = [
         image: `https://content.cavewire.com/host/jsindustries-us/path/media/catalog/product/cache/1/thumbnail/800x/e4d92e6aceaad517e7b5c12e0dc06587/f/o/forget-me-not-2-full-round-js-industries-surfboards_6.jpg`,
         dimensions: [
             {
-                height: `6' 0"`,
-                width: `18 3/4"`,
-                thickness: `2 3/8"`,
-                volume: 27.6
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
             {
-                height: `6' 1"`,
-                width: `18 7/8"`,
-                thickness: `2 7/16"`,
-                volume: 29
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
             {
-                height: `6' 2"`,
-                width: `19 1/8"`,
-                thickness: `2 1/2"`,
-                volume: 30.6
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
             {
-                height: `6' 3"`,
-                width: `19 1/8"`,
-                thickness: `2 1/2"`,
-                volume: 31
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
             {
-                height: `6' 4"`,
-                width: `19 1/4"`,
-                thickness: `2 9/16"`,
-                volume: 32.6
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
             {
-                height: `6' 5"`,
-                width: `19 1/2"`,
-                thickness: `2 5/8"`,
-                volume: 34
+                height1: 6,
+                height2: 4,
+                width1: 19,
+                width2: 7,
+                width3: 8,
+                thickness1: 2,
+                thickness2: 5,
+                thickness3: 8,
+                volume: 33.5,
+                key: uuid()
             },
         ]
     }

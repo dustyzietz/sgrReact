@@ -4,13 +4,14 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import uuid from 'uuid';
 
 export default function BoardCard(props) {
   const { board, minVolume, maxVolume, addModelToQuiver } = props ;
 
   const addToQuiver = (dimensions, id) => {
-    addModelToQuiver(board.model, board.image, dimensions);
-  }
+    addModelToQuiver(board.model, board.image, dimensions, id);
+  };
 
   return (
     <div>
@@ -41,8 +42,8 @@ export default function BoardCard(props) {
                         <div>
                          <StockBoard
                          dimensions={dim}
-                         id={index}
-                         key={index}
+                         id={uuid()}
+                         key={uuid()}
                          addToQuiver={addToQuiver}
                          />
                           <hr />

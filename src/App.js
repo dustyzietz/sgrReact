@@ -1,16 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Header from "./Header";
 import BoardList from "./BoardList";
 import Quiver from "./Quiver";
-import uuid from "uuid";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import TextField from "@material-ui/core/TextField";
-import DialogActions from "@material-ui/core/DialogActions";
-import Button from "@material-ui/core/Button";
+import CustomDialog from "./CustomDialog";
 
 export class App extends Component {
   state = {
@@ -19,13 +13,10 @@ export class App extends Component {
     quiver: [],
     quiverOn: false,
     dialogOn: false,
-    nextOn: false,
-    customBoard: {},
-    formStockBoard: {},
-    formCustomBoard: {},
+    customBoard: {}
   };
 
-  addModelToQuiver = (model, image, dimensions) => {
+  addModelToQuiver = (model, image, dimensions, id) => {
     this.setState({
       quiver: [
         ...this.state.quiver,
@@ -33,8 +24,7 @@ export class App extends Component {
           model: model,
           image: image,
           dimensions: dimensions,
-          id: uuid(),
-          key: uuid()
+          id: id
         }
       ]
     });
@@ -54,7 +44,7 @@ export class App extends Component {
     this.setState({ quiverOn: !this.state.quiverOn });
   };
 
-  handleDelete = id => {
+  handleDelete = id => {  
     this.setState({
       quiver: this.state.quiver.filter(board => board.id !== id)
     });
@@ -66,22 +56,15 @@ export class App extends Component {
     });
   };
 
-  toggleNext = () => {
-    this.setState({
-      nextOn: !this.state.nextOn
-    });
-  };
-
   updateDialog = board => {
+    const { model, id, image, dimensions } = board;
+
     this.setState({
       customBoard: {
-        model: board.model,
-        id: board.id,
-        image: board.image,
-        height: board.dimensions.height,
-        width: board.dimensions.width,
-        thickness: board.dimensions.thickness,
-        volume: board.dimensions.volume
+        model: model,
+        id: id,
+        image: image,
+        dimensions: dimensions
       }
     });
     this.toggleDialog();
@@ -94,8 +77,7 @@ export class App extends Component {
       quiver,
       quiverOn,
       dialogOn,
-      nextOn,
-      customBoard: { model, height, width, thickness, volume }
+      customBoard
     } = this.state;
 
     return (
@@ -124,188 +106,8 @@ export class App extends Component {
           onClose={this.toggleDialog}
           aria-labelledby="form-dialog-title"
         >
-          { !nextOn ?
-          <Fragment>
-          <DialogContent>
-            <DialogContentText>
-              {model} <br /> {height} {width} {thickness} <br />
-              {volume}Liters
-            </DialogContentText>
-            <DialogTitle style={{display:'inline'}} >Enter Stock Dimensions<br/>Height:</DialogTitle>
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            feet
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            inches
-            <DialogTitle style={{display:'inline'}}>Width:</DialogTitle>
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            and
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            {`/`}
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            inches
-            <br />
-            <DialogTitle style={{display:'inline'}}>Thickness:</DialogTitle>
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            and
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            {`/`}
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, marginTop: 0 }}
-            />
-            inches
-            <br />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.toggleNext} variant='contained' color="primary">
-              NEXT
-            </Button>
-          </DialogActions>
-          </Fragment>
-          :
-          <Fragment>
-          <DialogContent>
-            <DialogContentText>
-              {model} <br /> {height} {width} {thickness} <br />
-              {volume}Liters
-            </DialogContentText>
-            <DialogTitle style={{display:'inline'}} >Enter Custom Dimensions<br/>Height:</DialogTitle>
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            feet
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            inches
-            <DialogTitle style={{display:'inline'}}>Width:</DialogTitle>
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            and
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            {`/`}
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            inches
-            <br />
-            <DialogTitle style={{display:'inline'}}>Thickness:</DialogTitle>
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            and
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, margin: 0 }}
-            />
-            {`/`}
-            <TextField
-              id="outlined-number"
-              label=""
-              type="number"
-              margin="normal"
-              variant="outlined"
-              style={{ width: 60, marginTop: 0 }}
-            />
-            inches
-            <br />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.toggleNext} variant='contained' color="primary">
-              NEXT
-            </Button>
-          </DialogActions>
-          </Fragment>}
+          <CustomDialog customBoard={customBoard} addModelToQuiver={this.addModelToQuiver} toggleDialog={this.toggleDialog} 
+          handleDelete={this.handleDelete} />
         </Dialog>
       </div>
     );

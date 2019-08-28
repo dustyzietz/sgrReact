@@ -13,6 +13,7 @@ export default function Quiver(props) {
   const onDelete = (board) => {
     handleDelete(board.id)
   };
+  
   const customize = (board) => {
     onDelete(board);
     updateDialog(board); 
@@ -27,8 +28,8 @@ export default function Quiver(props) {
              {board.model}
            </Typography>
                  <Typography variant="h6" color="textSecondary" component="p">
-        {board.dimensions.height} {board.dimensions.width} {board.dimensions.thickness}<br/> 
-         {board.dimensions.volume}L <br/>
+       { `${board.dimensions.height1}'${board.dimensions.height2}" x ${board.dimensions.width1}"${board.dimensions.width2}/${board.dimensions.width3} x ${board.dimensions.thickness1}"${board.dimensions.thickness2}/${board.dimensions.thickness3} 
+         ${board.dimensions.volume}L `}
         <Button 
          variant='contained'
          color="secondary"
