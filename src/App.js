@@ -16,6 +16,13 @@ export class App extends Component {
     customBoard: {}
   };
 
+  componentDidMount = () => {
+    const boards = JSON.parse(window.localStorage.getItem("quiver"));
+     this.setState({
+       quiver: boards
+     })
+  };
+
   addModelToQuiver = (model, image, dimensions, id) => {
     this.setState({
       quiver: [
@@ -25,10 +32,11 @@ export class App extends Component {
           image: image,
           dimensions: dimensions,
           id: id
-        }
-      ]
-    });
+        }] },
+       () => window.localStorage.setItem("quiver", JSON.stringify(this.state.quiver)) 
+       );
     this.toggleQuiver();
+    
   };
 
   handleFilter = selectedVolume => {
@@ -69,6 +77,8 @@ export class App extends Component {
     });
     this.toggleDialog();
   };
+
+
 
   render() {
     const {

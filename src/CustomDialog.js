@@ -42,10 +42,10 @@ export class CustomDialog extends Component {
     const {height1, height2, width1, width2, width3, thickness1, thickness2, thickness3, volume} = this.props.customBoard.dimensions;
 
     const h = height1 * 12 + height2;
-    const w = width2 !== 0 ?width1 + (width2 / width3) 
-    : width1 ;
-    const t = thickness2 !== 0 ?thickness1 + (thickness2 / thickness3) 
-    : thickness1 ;
+    const w = width2 === 0 ? width1
+    : Number(width1) + Number(width2 / width3) ;
+    const t = thickness2 === 0 ?thickness1
+    : Number(thickness1) + Number(thickness2 / thickness3)  ;
     const volumeRatio = volume / ( h * w * t );
     return volumeRatio ;
   };
@@ -55,10 +55,10 @@ findVolume = () => {
   const {height1, height2, width1, width2, width3, thickness1, thickness2, thickness3, volume} = this.state.newBoard.dimensions;
 
   const h = Number(height1) * 12 + Number(height2);
-  const w = width2 !== 0 ?Number(width1) + Number(width2 / width3) 
-  : width1 ;
-  const t = thickness2 !== 0 ? Number(thickness1) + Number(thickness2 / thickness3) 
-  : thickness1 ;
+  const w = width2 === 0 ? width1 
+  : Number(width1) + Number(width2 / width3);
+  const t = thickness2 === 0 ? thickness1 
+  : Number(thickness1) + Number(thickness2 / thickness3) ;
 
  const vRatio = this.findvolumeRatio();
  const newVolume = (vRatio * h * w * t).toFixed(1) ;
