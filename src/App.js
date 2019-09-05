@@ -5,8 +5,11 @@ import BoardList from "./BoardList";
 import Quiver from "./Quiver";
 import Dialog from "@material-ui/core/Dialog";
 import CustomDialog from "./CustomDialog";
+import withMobileDialog from '@material-ui/core/withMobileDialog';
+import { useTheme } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
-export class App extends Component {
+class App extends Component {
   state = {
     minVolume: "20",
     maxVolume: "40",
@@ -77,10 +80,16 @@ export class App extends Component {
     });
     this.toggleDialog();
   };
-
-
+   
+   fullScreen = () => {
+    
+   };
+  
 
   render() {
+    const { fullScreen } = this.props;
+    
+
     const {
       minVolume,
       maxVolume,
@@ -114,7 +123,9 @@ export class App extends Component {
         <Dialog
           open={dialogOn}
           onClose={this.toggleDialog}
-          aria-labelledby="form-dialog-title"
+          aria-labelledby="responsive-dialog-title"
+          fullScreen={fullScreen}
+          
         >
           <CustomDialog customBoard={customBoard} addModelToQuiver={this.addModelToQuiver} toggleDialog={this.toggleDialog} 
           handleDelete={this.handleDelete} />
@@ -124,4 +135,9 @@ export class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  fullScreen: PropTypes.bool.isRequired,
+};
+
+
+export default withMobileDialog()(App);
