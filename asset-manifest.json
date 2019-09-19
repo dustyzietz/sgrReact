@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/sgrReact/static/css/main.58c2b1c5.chunk.css",
-    "main.js": "/sgrReact/static/js/main.3fd552d7.chunk.js",
-    "main.js.map": "/sgrReact/static/js/main.3fd552d7.chunk.js.map",
+    "main.js": "/sgrReact/static/js/main.fd2a5edd.chunk.js",
+    "main.js.map": "/sgrReact/static/js/main.fd2a5edd.chunk.js.map",
     "runtime~main.js": "/sgrReact/static/js/runtime~main.4bbff757.js",
     "runtime~main.js.map": "/sgrReact/static/js/runtime~main.4bbff757.js.map",
-    "static/js/2.6d36df86.chunk.js": "/sgrReact/static/js/2.6d36df86.chunk.js",
-    "static/js/2.6d36df86.chunk.js.map": "/sgrReact/static/js/2.6d36df86.chunk.js.map",
+    "static/js/2.dd5ed27e.chunk.js": "/sgrReact/static/js/2.dd5ed27e.chunk.js",
+    "static/js/2.dd5ed27e.chunk.js.map": "/sgrReact/static/js/2.dd5ed27e.chunk.js.map",
     "index.html": "/sgrReact/index.html",
-    "precache-manifest.181d8d12abc83d56fb76b646ef0c7b85.js": "/sgrReact/precache-manifest.181d8d12abc83d56fb76b646ef0c7b85.js",
+    "precache-manifest.8069aec158ba38d910802ff8f3363cdb.js": "/sgrReact/precache-manifest.8069aec158ba38d910802ff8f3363cdb.js",
     "service-worker.js": "/sgrReact/service-worker.js",
     "static/css/main.58c2b1c5.chunk.css.map": "/sgrReact/static/css/main.58c2b1c5.chunk.css.map"
   }
